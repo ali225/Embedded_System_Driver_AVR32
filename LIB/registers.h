@@ -11,6 +11,20 @@
 /*************************************************/
 #define SREG (*((volatile unsigned char *) 0x5F))
 
+typedef enum
+{
+	C,
+	Z,
+	N,
+	V,
+	S,
+	H,
+	T,
+	I
+
+}SREG_t;
+
+
 /**************** DIO Registers ****************/
 /***********************************************/
 
@@ -37,6 +51,53 @@
 #define MCUCSR (*((volatile unsigned char *) 0x54))
 #define GICR (*((volatile unsigned char *) 0x5B))
 #define GIFR (*((volatile unsigned char *) 0x5A))
+typedef enum
+{
+
+	ISC00,
+	ISC01,
+	ISC10,
+	ISC11,
+	SM0,
+	SM1,
+	SM2,
+	SE
+}MCUCR_t;
+
+typedef enum
+{
+
+	JTD,
+	ISC2,
+	MCUCSR_RSVD0,
+	JTRF,
+	WDRF,
+	BORF,
+	EXTRF,
+	PORF
+}MCUCSR_t;
+typedef enum
+{
+	IVCE,
+	IVSEL,
+	GICR_RSVD0,
+	GICR_RSVD1,
+	GICR_RSVD2,
+	INT0,
+	INT1,
+	INT2
+
+}GICR_t;
+
+typedef enum{
+	GIFR_RSVD0,
+	GIFR_RSVD1,
+	GIFR_RSVD2,
+	GIFR_RSVD3,
+	INTF1,
+	INTF0,
+	INTF2
+}GIFR_t;
 
 /**************** Timer 0 Registers ***************************/
 /**************************************************************/
