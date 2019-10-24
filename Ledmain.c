@@ -14,23 +14,25 @@
 #include "HAL/BUTTON/inc/HAL_BUTTON.h"
 
 int main(void) {
-
 	u8 buttom;
 	//u8 led;
-
 	initLed(LED0);
 	initLed(LED1);
 	initButton(BUTTON0);
+	initButton(BUTTON1);
 
-	while (1) {
+	while(1){
 		getButtonState(BUTTON0, &buttom);
-
+		//getButtonState(BUTTON1, &buttom);
 		if (buttom == ERROR) {
 			turnOnLed(LED0);
-			_delay_loop_2(500);
+			//_delay_loop_2(500);
 			turnOnLed(LED1);
+			turnOnLed(LED2);
 		} else {
 			turnOffLed(LED0);
+			turnOffLed(LED1);
+			turnOffLed(LED2);
 		}
 	}
 	return 0;
