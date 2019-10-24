@@ -18,15 +18,6 @@ typedef enum
 	PORT_C,
 	PORT_D
 }portX_t;
-/*
-typedef enum
-{
-	PORT_A,
-	PORT_B,
-	PORT_C,
-	PORT_D
-}portX_t;
-*/
 
 /* Pin data type */
 typedef enum
@@ -40,32 +31,14 @@ typedef enum
 	PIN6,
 	PIN7
 }pinX_t;
-/*
-typedef enum
-{
-	PIN0,
-	PIN1,
-	PIN2,
-	PIN3,
-	PIN4,
-	PIN5,
-	PIN6,
-	PIN7
-}pinX_t;
-*/
+
 
 typedef enum
 {
 	INPUT,
 	OUTPUT
 }pinDir_t;
-/*
-typedef enum
-{
-	INPUT,
-	OUTPUT
-}pinDir_t;
-*/
+
 
 typedef enum
 {

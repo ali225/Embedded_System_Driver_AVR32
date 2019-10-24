@@ -24,13 +24,14 @@ stdReturnType_t DIO_init(portX_t PortName, pinX_t pinNum, pinDir_t direction)
 {
 	stdReturnType_t status = ERROR;
 
-	/*@TODO: Validation of input */
+	//@TODO: Validation of input
 
 	switch(PortName)
 	{
 		case PORT_A:
 			if(INPUT == direction)
 			{
+
 				CLR_BIT(DDRA, pinNum);
 				status = SUCCESS;
 			}
@@ -104,7 +105,6 @@ stdReturnType_t DIO_init(portX_t PortName, pinX_t pinNum, pinDir_t direction)
 	return status;
 
 }
-
 /*
  * Name:  DIO_read
  * brief: used to read state of given pin in given port.
