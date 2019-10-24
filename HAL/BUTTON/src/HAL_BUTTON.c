@@ -1,14 +1,13 @@
 /*
 
  * HAL_BUTTON.c
-
  *
  *  Created on: Oct 7, 2019
  *      Author: Eng Ali Gamal
  */
 
+#include "util/delay.h"
 #include "../../../LIB/std_types.h"
-#include "avr/delay.h"
 #include "../../../MCAL/DIO/inc/DIO.h"
 #include "../inc/HAL_BUTTON.h"
 #include "../inc/HAL_BUTTON_cfg.h"
@@ -63,11 +62,12 @@ stdReturnType_t getButtonState(buttonX_t buttonID, buttonState_t * pbuttonState)
 	switch(buttonID)
 	{
 		case BUTTON0:
-			retStatus = DIO_read(BUTTON0_PORT, BUTTON0_PIN, &pinState);
+			retStatus = DIO_read(BUTTON0_PORT,BUTTON0,&pinState);
 			if(PIN_IS_HIGH == pinState)
 			{
 				_delay_ms(30);
-				retStatus = DIO_read(BUTTON0_PORT, BUTTON0_PIN, &pinState);
+				retStatus = DIO_read(BUTTON0_PORT,BUTTON0,&pinState);
+
 			}
 			else
 			{
