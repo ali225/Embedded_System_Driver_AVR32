@@ -22,6 +22,8 @@ typedef enum
 extern stdReturnType_t initLed(ledX_t ledID);
 extern stdReturnType_t turnOnLed(ledX_t ledID);
 extern stdReturnType_t turnOffLed(ledX_t ledID);
+extern stdReturnType_t toogleLed(ledX_t ledID);
+
 
 
 #endif /* HAL_LED_H_ */
