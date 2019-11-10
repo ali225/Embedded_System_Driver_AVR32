@@ -1,17 +1,14 @@
 /*
-
- * LED.c
+ * HAL_led.c
  *
- *  Created on: Oct 7, 2019
- *      Author: Eng Ali Gamal
+ *  Created on: Oct 6, 2019
+ *      Author: Abdelrahman.Elesh
  */
-#include "util/delay.h"
-#include "stdlib.h"
+
 #include "../../../LIB/std_types.h"
 #include "../../../MCAL/DIO/inc/DIO.h"
-#include "../inc/HAL_LED_cfg.h"
-#include "../inc/HAL_LED.h"
-
+#include "../../LED/inc/HAL_led.h"
+#include "../../LED/inc/HAL_led_cfg.h"
 
 /*
  * Name:  initLed
@@ -20,15 +17,12 @@
  * 			IN: ledID : the name of the needed LED.
  *
  */
-
 stdReturnType_t initLed(ledX_t ledID)
 {
 	stdReturnType_t retStatus = ERROR;
 
-
 	switch(ledID)
 	{
-
 		case LED0:
 			retStatus = DIO_init(LED0_PORT, LED0_PIN, OUTPUT);
 			break;
@@ -109,21 +103,3 @@ stdReturnType_t turnOffLed(ledX_t ledID)
 	return changeLedState(ledID, PIN_IS_LOW);
 }
 
-/*
- * Name:  ToogelLed
- * brief: used to write value to make given LED ON/OFF.
- * params:
- * 			IN: ledID : the name of the needed LED.
- * 			IN: pinState : the value of the pin HIGH/LOW.
- */
-
-stdReturnType_t toogleLed(ledX_t ledID){
-
-	stdReturnType_t status = ERROR;
-	_delay_ms(1000);
-	status = changeLedState(ledID,PIN_IS_HIGH);
-	_delay_ms(1000);
-	status |=changeLedState(ledID,PIN_IS_LOW);
-
-	return status;
-}

@@ -1,12 +1,12 @@
 /*
  * DIO.h
  *
- *  Created on: Oct 10, 2019
- *      Author: Eng Ali Gamal
+ *  Created on: Sep 28, 2019
+ *      Author: Abdelrahman Elesh
  */
 
-#ifndef MCAL_DIO_INC_DIO_H_
-#define MCAL_DIO_INC_DIO_H_
+#ifndef DIO_MCAL_INC_DIO_H_
+#define DIO_MCAL_INC_DIO_H_
 
 /************* Type def section ************/
 
@@ -32,13 +32,11 @@ typedef enum
 	PIN7
 }pinX_t;
 
-
 typedef enum
 {
 	INPUT,
 	OUTPUT
 }pinDir_t;
-
 
 typedef enum
 {
@@ -48,9 +46,11 @@ typedef enum
 }pinState_t;
 
 /************ Function declaration section ***********/
+
 extern stdReturnType_t DIO_init(portX_t PortName, pinX_t PinNum, pinDir_t direction);
 extern stdReturnType_t DIO_read(portX_t PortName, pinX_t PinNum, pinState_t * ppinState);
 extern stdReturnType_t DIO_write(portX_t PortName, pinX_t PinNum, pinState_t pinState);
 
 
-#endif /* MCAL_DIO_INC_DIO_H_ */
+
+#endif /* DIO_MCAL_INC_DIO_H_ */

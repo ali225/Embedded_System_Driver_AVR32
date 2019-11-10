@@ -1,24 +1,21 @@
 /*
- * HAL_LED_cfg.h
+ * HAL_led_cfg.h
  *
- *  Created on: Oct 7, 2019
- *      Author: Eng Ali Gamal
+ *  Created on: Oct 6, 2019
+ *      Author: Abdelrahman.Elesh
  */
 
-#ifndef LED_HAL_LED_CFG_H_
-#define LED_HAL_LED_CFG_H_
+#ifndef HAL_LED_CFG_H_
+#define HAL_LED_CFG_H_
 
-/*******  Macros def section ********/
+/************* Macros def section ************/
+#define LED0_PORT	PORT_D
+#define LED0_PIN	PIN5
 
-#define LED0_PORT (PORT_D)
-#define LED0_PIN  (PIN5)
+#define LED1_PORT	PORT_D
+#define LED1_PIN	PIN6
 
-#define LED1_PORT (PORT_D)
-#define LED1_PIN  (PIN6)
+#define LED2_PORT	PORT_D
+#define LED2_PIN	PIN7
 
-#define LED2_PORT (PORT_D)
-#define LED2_PIN  (PIN7)
-
-
-
-#endif /* LED_HAL_LED_CFG_H_ */
+#endif /* HAL_LED_CFG_H_ */

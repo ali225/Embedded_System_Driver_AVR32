@@ -1,8 +1,8 @@
 /*
  * DIO.c
  *
- *  Created on: Oct 10, 2019
- *      Author: Eng Ali Gamal
+ *  Created on: Sep 28, 2019
+ *      Author: Abdelrahman Elesh
  */
 
 
@@ -10,7 +10,7 @@
 #include "../../../LIB/std_types.h"
 #include "../../../LIB/bit_math.h"
 #include "../../../LIB/registers.h"
-#include "../inc/DIO.h"
+#include "../../DIO/inc/DIO.h"
 
 /*
  * Name:  DIO_init
@@ -24,14 +24,13 @@ stdReturnType_t DIO_init(portX_t PortName, pinX_t pinNum, pinDir_t direction)
 {
 	stdReturnType_t status = ERROR;
 
-	//@TODO: Validation of input
+	/*@TODO: Validation of input */
 
 	switch(PortName)
 	{
 		case PORT_A:
 			if(INPUT == direction)
 			{
-
 				CLR_BIT(DDRA, pinNum);
 				status = SUCCESS;
 			}
@@ -105,6 +104,7 @@ stdReturnType_t DIO_init(portX_t PortName, pinX_t pinNum, pinDir_t direction)
 	return status;
 
 }
+
 /*
  * Name:  DIO_read
  * brief: used to read state of given pin in given port.

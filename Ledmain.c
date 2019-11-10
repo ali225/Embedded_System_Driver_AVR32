@@ -1,17 +1,17 @@
-/*
- * Ledmain.c
+/*  Ledmain.c
  *
  *  Created on: Oct 24, 2019
  *      Author: Eng Ali Gamal
- */
-#define F_CPU 16000000UL //16 MHZ
+
+
+
 #define F_CPU 16000000UL //16 MHZ
 
 #include "avr/io.h"
 #include "util/delay.h"
 #include "LIB/std_types.h"
 #include "HAL/LED/inc/HAL_LED.h"
-#include "HAL/BUTTON/inc/HAL_BUTTON.h"
+#include "HAL/BUTTON/Inc/HAL_BUTTON.h"
 
 int main(void) {
 	u8 buttom;
@@ -36,16 +36,16 @@ int main(void) {
 		}
 	}
 	return 0;
-}
+}*/
+/*
 
-/*while(1) {
+while(1) {
  // check the flag
  if (flag == 1 ) {
  turnOnLed(LED0);
  flag = 0;
- }*/
+ }
 
-/*
  int main() {
 
  u8 i =0;
@@ -66,9 +66,8 @@ int main(void) {
  }
  return 0;
  }
- */
 
-/*
+
  int main(void) {
  DDRD |= (1 << PD6); //configure pin 6 in PORTD as output pin
 
@@ -87,9 +86,9 @@ int main(void) {
  //*****************************************
  }
  }
- */
 
-/*int main() {
+
+int main() {
 
  DDRD &= (1 << 0); // configure pin0 in PORTD as input pin
 
@@ -107,9 +106,9 @@ int main(void) {
  }
  }
  return 0;
- }*/
+ }
 
-/*int main ()
+int main ()
  {
  DDRD |= (1<<PIN7);   // Config pin7 Output
  DDRD |= (1<<PIN6);  // Config Pin7 Output
@@ -130,9 +129,8 @@ int main(void) {
  _delay_ms(100);
  }
  }
- }*/
+ }
 
-/*
  int main() {
  DDRD |= (1 << PIN7); // config pin7 output
  //PORTD = 0xff;
@@ -156,9 +154,8 @@ int main(void) {
  }
 
  }
- */
 
-/*
+
  int main(void) {
  DDRD = 0b11100000; // Data Direction Register D : writing a one to the bit enables output
 
@@ -170,4 +167,5 @@ int main(void) {
  }
  return 0;
  }
- */
+
+*/
