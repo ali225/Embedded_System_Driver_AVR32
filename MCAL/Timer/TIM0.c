@@ -35,7 +35,6 @@ void TIM0_init(void)
 	TCNT0 = TIM0_TCNT0_INIT;
 	OCR0 = TIM0_OCR0_INIT;
 
-
 	if(TIM0_MODE_SELECT == TIM0_NORMAL_MODE)
 	{
 		CLR_BIT(TCCR0,3);
@@ -107,6 +106,8 @@ void TIM0_init(void)
 		SET_BIT(TCCR0,4);
 		SET_BIT(TCCR0,5);
 	}
+
+
 
 }
 

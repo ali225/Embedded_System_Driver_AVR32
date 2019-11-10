@@ -1,9 +1,10 @@
 /*
+
  * WDG_Timer.c
  *
  *  Created on: Nov 2, 2019
  *      Author: Eng Ali Gamal
- */
+
 
 #define F_CPU 16000000UL //16 MHZ
 
@@ -23,3 +24,4 @@ int main() {
 
 	}
 }
+*/

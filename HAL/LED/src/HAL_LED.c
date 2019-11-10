@@ -9,7 +9,7 @@
 #include "../../../MCAL/DIO/inc/DIO.h"
 #include "../../LED/inc/HAL_led.h"
 #include "../../LED/inc/HAL_led_cfg.h"
-
+#include "util/delay.h"
 /*
  * Name:  initLed
  * brief: used to config. given pin where the led is connected as output
@@ -103,3 +103,13 @@ stdReturnType_t turnOffLed(ledX_t ledID)
 	return changeLedState(ledID, PIN_IS_LOW);
 }
 
+stdReturnType_t toogleLed(ledX_t ledID)
+{
+	stdReturnType_t stats = ERROR;
+	_delay_ms(10);
+	turnOnLed(ledID);
+	_delay_ms(10);
+  stats|=	turnOffLed(ledID);
+	stats = SUCCESS;
+	return stats;
+}

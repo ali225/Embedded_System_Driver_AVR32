@@ -14,13 +14,16 @@
 #include "HAL/LED/inc/HAL_LED.h"
 #include "HAL/LCD/inc/HAL_lcd.h"
 #include "HAL/BUTTON/Inc/HAL_BUTTON.h"
+#include "MCAL/Timer/TIM0_cfg.h"
 #include "MCAL/Timer/TIM0.h"
+#include "MCAL/interupts/ins/MCAL_interupt.h"
 
 int main() {
 	u8 buttom;
-
+    u8 i =0;
 	//u8 led;
 	u8 falg = 0;
+	u8 count =0;
 	initLed(LED2);
 	initLed(LED1);
 	initLed(LED0);
@@ -29,6 +32,7 @@ int main() {
 	initButton(BUTTON2);
 
 	LCD_init();
+
 	TIM0_init();
 
 	while (1) {
@@ -37,7 +41,7 @@ int main() {
 		 *  When user push the button LCD is cleared,When user releases
 		 * the button LCD shall display how long the user pressed in seconds
 
-		getButtonState(BUTTON0, &buttom);
+			getButtonState(BUTTON0, &buttom);
 		 if (buttom == 1) {
 		 TIM0_setTCNT0(0xFF);
 		 falg++;
@@ -47,30 +51,41 @@ int main() {
 		 falg = 0;
 		 }
 
-		Write a program that toggles three LEDs with
+			Write a program that toggles three LEDs with
 		 *the following rates respectively, 100ms, 500ms, 1000ms
 		 *
 
+		if (TIM0_TCNT0_INIT >= 193)
+		{
+		 falg++;u9o.]'\'
 
-		 TIM0_setTCNT0(0xFF);
-		 falg++;
-		 LCD_clearScreen();
-		 LCD_displayInteger(falg);
+		LCD_clearScreen();
+		LCD_displayInteger(falg);
 
-		 switch (falg) {
-		 case 10:
-		 toogleLed(LED0);
-		 break;
-		 case 50:
-		 toogleLed(LED1);
-		 break;
-		 case 100:
-		 toogleLed(LED2);
-		 break;
-		 default:
-		 break;
+		switch (falg) {
+		case 10:
+			turnOnLed(LED0);
+			TIM0_setTCNT0(0);
 
-		 }
+			break;
+		case 50:
+			turnOnLed(LED1);
+			TIM0_setTCNT0(0);
+
+			break;
+		case 100:
+			turnOnLed(LED2);
+			TIM0_setTCNT0(0);
+
+			break;
+		default:
+			break;
+
+		}
+		TIM0_setTCNT0(0);
+
+		}
+
 
 		 Write a program that uses a button and LED,
 		 * the button shall have the following modes:
@@ -82,35 +97,37 @@ int main() {
 		 *
 
 
-		if (buttom == 1) {
-			TIM0_setTCNT0(0xFF);
-			falg++;
-			LCD_clearScreen();
-			LCD_displayInteger(falg);
 
-			turnOnLed(LED0);
+		 if (buttom == 1) {
+		 TIM0_setTCNT0(0xFF);
+		 falg++;
+		 LCD_clearScreen();
+		 LCD_displayInteger(falg);
 
-		} else if (buttom == 1) {
-			TIM0_setTCNT0(0xFF);
-			falg++;
-			LCD_clearScreen();
-			LCD_displayInteger(falg);
-			if ((buttom == 1) && (falg == 2)) {
-				turnOnLed(LED0);
-			}
+		 turnOnLed(LED0);
 
-		} else if (buttom == 1) {
-			TIM0_setTCNT0(0xFF);
-			falg++;
-			LCD_clearScreen();
-			LCD_displayInteger(falg);
+		 } else if (buttom == 1) {
+		 TIM0_setTCNT0(0xFF);
+		 falg++;
+		 LCD_clearScreen();
+		 LCD_displayInteger(falg);
+		 if ((buttom == 1) && (falg == 2)) {
+		 turnOnLed(LED0);
+		 }
 
-			if ((buttom == 1) && (falg == 4)) {
-				toogleLed(LED0);
-			}
+		 } else if (buttom == 1) {
+		 TIM0_setTCNT0(0xFF);
+		 falg++;
+		 LCD_clearScreen();
+		 LCD_displayInteger(falg);
 
-		}
+		 if ((buttom == 1) && (falg == 4)) {
+		 toogleLed(LED0);
+		 }
+
+		 }
+		 }
+
 	}
-
 }
 */

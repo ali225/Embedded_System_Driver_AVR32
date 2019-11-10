@@ -4,11 +4,11 @@
  *
  *  Created on: Sep 26, 2019
  *      Author: Eng Ali Gamal
-
+*/
 
 #define F_CPU 16000000UL //16 MHZ
 
-#include "avr/io.h"
+
 #include "util/delay.h"
 #include "LIB/std_types.h"
 #include "HAL/LED/inc/HAL_LED.h"
@@ -25,7 +25,7 @@
  #include "HAL/LCD/inc/HAL_LCD.h"
  #include "HAL/LCD/inc/HAL_LCD_cfg.h"
 
-
+/*
  u8 flag = 1;
  void callBack(void);
  void callBack(void) {
@@ -133,7 +133,7 @@
  }
 
 
-
+*/
  int main() {
 
  //DIO_init(PORT_D, PIN5, OUTPUT);
@@ -150,7 +150,7 @@
  }
  return 0;
  }
-
+/*
 
 
  int main(void) {
