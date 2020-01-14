@@ -36,7 +36,7 @@
         1- TIM0_NORMAL_MODE
         2- TIM0_CTC_MODE
 */
-#define TIM0_MODE_SELECT  TIM0_NORMAL_MODE
+#define TIM0_MODE_SELECT  TIM0_CTC_MODE
 
 
 /* Prescaler select: 
@@ -49,11 +49,10 @@
       6- TIM0_1024_PRESCALER_SELECT
       
 */
-#define TIM0_PRESCALER_SELECT  TIM0_NO_CLK_SELECT
+#define TIM0_PRESCALER_SELECT  TIM0_1024_PRESCALER_SELECT
 
 /* TCNTO init val (0 ----> 255) */
-#define TIM0_TCNT0_INIT     193//193 // 1/16 = .0625 , (1sec / 0.0625)/256=62.5
-                                 // 256 - 62.5 = 193.5
+#define TIM0_TCNT0_INIT     0
 
 /* OCR0 init val (0 ----> 255) */
 #define TIM0_OCR0_INIT      128
