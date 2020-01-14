@@ -1,10 +1,9 @@
 /*
-
  * LCDmain.c
  *
  *  Created on: Oct 24, 2019
  *      Author: Eng Ali Gamal
-
+ *
 
 #include "LIB/std_types.h"
 #include"LIB/bit_math.h"
